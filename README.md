@@ -1,6 +1,6 @@
 # TrabaGE
 
-PWA de empleo para Guinea Ecuatorial — "Donde las oportunidades te encuentran".
+Employment PWA for Equatorial Guinea — "Where opportunities find you".
 
 ## Stack
 
@@ -14,7 +14,7 @@ PWA de empleo para Guinea Ecuatorial — "Donde las oportunidades te encuentran"
 ```bash
 npm install
 cp .env.example .env.local
-# Editar .env.local con credenciales de Supabase
+# Edit .env.local with your Supabase credentials
 npm run dev
 ```
 
@@ -28,17 +28,17 @@ supabase functions deploy send_push
 supabase functions deploy send_welcome_email
 ```
 
-### Auth + welcome emails (Resend)
+### Authentication + welcome emails (Resend)
 
-1. **Resend Dashboard**: verify domain `trabage.org`, create API key
+1. **Resend Dashboard**: verify the domain `trabage.org` and create an API key
 2. **Edge Functions → Secrets**: `RESEND_API_KEY`, `RESEND_AUTH_FROM_EMAIL`, `RESEND_WELCOME_FROM_EMAIL`, `RESEND_FROM_NAME`, `SEND_EMAIL_HOOK_SECRET`, `WELCOME_WEBHOOK_SECRET`
 3. **Authentication → Hooks → Send Email**: HTTPS → `send_auth_email` function URL → Generate Secret
 4. **Database → Webhooks**: `INSERT` on `welcome_email_outbox` → `send_welcome_email`
 
 ## Scripts
 
-| Comando | Descripción |
+| Command | Description |
 |---------|-------------|
-| `npm run dev` | Servidor de desarrollo |
-| `npm run build` | Build de producción |
-| `npm run preview` | Preview del build |
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview the build |
